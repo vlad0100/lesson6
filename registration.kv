@@ -1,0 +1,137 @@
+ScreenManager:
+    FirstWindow:
+    SecondWindow:
+    AppWindow:
+
+<FirstWindow>:
+    name:"FirstWindow"
+    MDCard:
+        size_hint: None, None
+        size: "400", "500"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        orientation: "vertical"
+        padding: 25
+        spacing: 25
+
+        MDLabel:
+            id: Label_Sign_Up
+            text: "Sign Up"
+            halign: "center"
+            font_size: 45
+
+
+        MDTextFieldRound:
+            id: user
+            hint_text: "Username"
+            icon_left: "email"
+            font_size: 18
+            width: 200
+            size_hint_x: None
+            pos_hint:{"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: passw
+            hint_text: "Password"
+            icon_left: "lock"
+            icon_right: "eye-off"
+            font_size: 18
+            width: 200
+            size_hint_x: None
+            pos_hint:{"center_x": 0.5}
+            password: True
+
+        MDRoundFlatButton:
+            text: "Sign Up"
+            text_color:
+            line_color:
+            font_size: 20
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_press:app.sign_up(passw.text,user.text)
+
+
+        MDRoundFlatButton:
+            text: "Log In"
+            theme_text_color: "Custom"
+            text_color: 0,0,0
+            line_color: 0,0,0
+            font_size: 20
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_press:app.root.current ="SecondWindow"
+
+
+
+<SecondWindow>:
+    name: "SecondWindow"
+    MDCard:
+        size_hint: None, None
+        size: "400", "500"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        orientation: "vertical"
+        padding: 25
+        spacing: 25
+
+        MDLabel:
+            id: Label_reg
+            text: "Registration"
+            halign: "center"
+            font_size: 45
+
+
+        MDTextFieldRound:
+            id: user
+            hint_text: "Enter your email address"
+            icon_left: "email"
+            font_size: 18
+            width: 200
+            size_hint_x: None
+            pos_hint:{"center_x": 0.5}
+
+        MDTextFieldRound:
+            id: passw
+            hint_text: "Enter your password"
+            icon_left: "lock"
+            icon_right: "eye-off"
+            font_size: 18
+            width: 200
+            size_hint_x: None
+            pos_hint:{"center_x": 0.5}
+            password: True
+
+        MDRoundFlatIconButton:
+            text: "Log in"
+            theme_text_color: "Custom"
+            text_color: 0,0,0
+            line_color: 0,0,0
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_press:app.log_in(passw.text,user.text)
+
+        MDRoundFlatIconButton:
+            text: "Sign Up"
+            theme_text_color: "Custom"
+            text_color: 0,0,0
+            line_color: 0,0,0
+            pos_hint: {"center_x": .5, "center_y": .5}
+            on_press:app.root.current ="FirstWindow"
+
+
+
+<AppWindow>:
+    name: "AppWindow"
+    MDCard:
+        size_hint: None, None
+        size: "400", "500"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        elevation:10
+        orientation: "vertical"
+        padding: 25
+        spacing: 25
+
+        MDLabel:
+            id: AppCard
+            text: "Hola Bola"
+            halign: "center"
+            font_size: 45
+
+
